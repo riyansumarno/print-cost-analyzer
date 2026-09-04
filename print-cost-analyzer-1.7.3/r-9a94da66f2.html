@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#08111f">
+    <title>Owner Access · Print Cost Analyzer</title>
+    <link rel="stylesheet" href="assets/css/style.css?v=1.7.3">
+    <link rel="stylesheet" href="assets/css/settings.css?v=1.7.3">
+</head>
+<body>
+<section class="owner-gate" id="ownerGate">
+    <div class="owner-gate-card">
+        <div class="owner-lock" aria-hidden="true">⌁</div>
+        <span class="settings-kicker">Print Cost Analyzer 1.7.3</span>
+        <h1>Owner Access</h1>
+        <p>Masukkan kunci pemilik untuk membuka konfigurasi tarif privat.</p>
+        <label class="field-control"><span>Kunci akses</span><input id="ownerKey" type="password" autocomplete="current-password" spellcheck="false" placeholder="Kunci pemilik"></label>
+        <button class="primary-button settings-action" id="unlockOwner" type="button">Buka Pengaturan</button>
+        <small id="gateStatus" class="gate-status">Konfigurasi privat hanya diproses di browser ini.</small>
+        <a class="compact-back" href="./">← Kembali ke Analyzer</a>
+    </div>
+</section>
+
+<div class="settings-shell" id="settingsShell" hidden>
+    <header class="settings-header">
+        <div>
+            <span class="settings-kicker">Print Cost Analyzer 1.7.3 · Owner Access</span>
+            <h1>Pengaturan Tarif</h1>
+            <p>Tanpa database. Konfigurasi privat dapat disimpan terenkripsi di browser atau dipublikasikan sebagai JSON statis.</p>
+        </div>
+        <a class="secondary-button compact-link" href="./">Kembali ke Analyzer</a>
+    </header>
+
+    <section class="settings-notice">
+        <strong>Mode privat</strong>
+        <p>Halaman publik hanya membaca <code>data/pricing-config.json</code>. Nilai yang disimpan lokal di halaman ini tidak memengaruhi pelanggan sampai Anda mengunduh atau mempublikasikan JSON baru.</p>
+    </section>
+
+    <section class="settings-card">
+        <div class="settings-card-head">
+            <div><h2>Skema Tarif Aktif</h2><p>Pilih skema yang akan dipakai oleh Analyzer publik.</p></div>
+            <label class="field-control tier-control"><span>Skema</span><select id="activeTier"><option value="floor">Lantai</option><option value="competitive">Kompetitif</option><option value="normal">Normal</option></select></label>
+        </div>
+        <div class="settings-meta" id="configMeta">Menunggu akses…</div>
+    </section>
+
+    <section class="settings-card">
+        <div class="settings-card-head"><div><h2>Tarif Media & Ukuran</h2><p>Edit H, HW, W dan kredit duplex untuk skema yang sedang dipilih.</p></div><div class="tier-badge" id="editingTierBadge">Normal</div></div>
+        <div class="table-scroll"><table class="pricing-table"><thead><tr><th>Media</th><th>Ukuran</th><th>H</th><th>HW</th><th>W</th><th>Kredit Duplex</th><th>Duplex</th></tr></thead><tbody id="pricingRows"></tbody></table></div>
+    </section>
+
+    <section class="settings-card">
+        <div class="settings-card-head"><div><h2>Tarif Media Dibawa Pelanggan</h2><p>Biaya kertas = Rp0. Tarif di bawah hanya jasa cetak/produksi. Kredit duplex selalu Rp0.</p></div><div class="tier-badge" id="customerEditingTierBadge">Normal</div></div>
+        <div class="table-scroll"><table class="pricing-table"><thead><tr><th>Kelompok</th><th>Ukuran</th><th>H</th><th>HW</th><th>W</th><th>Keterangan</th></tr></thead><tbody id="customerPricingRows"></tbody></table></div>
+    </section>
+
+    <section class="settings-card">
+        <div class="settings-card-head"><div><h2>Profil Produksi</h2><p>Informasi pengelompokan produksi. Tidak tersambung ke database, kasir, printer, atau perangkat apa pun.</p></div></div>
+        <div class="profile-grid" id="profileGrid"></div>
+    </section>
+
+    <section class="settings-card">
+        <div class="settings-card-head"><div><h2>Publikasi GitHub</h2><p>Opsional. Token hanya dipakai saat tombol publikasi ditekan dan tidak disimpan.</p></div></div>
+        <div class="github-grid">
+            <label class="field-control"><span>Owner / organisasi</span><input id="ghOwner" type="text" autocomplete="off" placeholder="username"></label>
+            <label class="field-control"><span>Repository</span><input id="ghRepo" type="text" autocomplete="off" placeholder="nama-repository"></label>
+            <label class="field-control"><span>Branch</span><input id="ghBranch" type="text" value="main" autocomplete="off"></label>
+            <label class="field-control"><span>Path JSON</span><input id="ghPath" type="text" value="data/pricing-config.json" autocomplete="off"></label>
+            <label class="field-control field-wide"><span>Fine-grained GitHub token</span><input id="ghToken" type="password" autocomplete="off" placeholder="Token tidak akan disimpan"></label>
+        </div>
+        <div class="publish-note" id="publishStatus">Belum ada publikasi pada sesi ini.</div>
+    </section>
+
+    <div class="settings-actions">
+        <button class="primary-button settings-action" type="button" id="saveSettings">Simpan Lokal</button>
+        <button class="secondary-button settings-action" type="button" id="exportSettings">Download pricing-config.json</button>
+        <label class="secondary-button settings-action file-action" for="importSettings">Impor JSON<input id="importSettings" type="file" accept="application/json,.json" hidden></label>
+        <button class="secondary-button settings-action" type="button" id="publishSettings">Simpan &amp; Publikasikan</button>
+        <button class="secondary-button settings-action danger-outline" type="button" id="resetSettings">Reset Lokal</button>
+        <button class="secondary-button settings-action danger-outline" type="button" id="lockOwner">Kunci</button>
+    </div>
+
+    <footer class="settings-footer">© 2026 · Dibuat oleh Riyan Sumarno · Rizky Fotocopy &amp; Stationery by Giting Creative</footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25"></script>
+<script type="module" src="assets/js/settings.js?v=1.7.3"></script>
+</body>
+</html>
