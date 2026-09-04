@@ -1,0 +1,1130 @@
+{
+  "schema_version": 3,
+  "price_version": "2026.08-D",
+  "updated_at": "2026-08-21",
+  "currency": "IDR",
+  "active_tier": "normal",
+  "tier_labels": {
+    "floor": "Lantai",
+    "competitive": "Kompetitif",
+    "normal": "Normal"
+  },
+  "materials": [
+    {
+      "id": "hvs-white-70",
+      "name": "HVS Putih 70 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 250,
+              "HW": 350,
+              "W": 400,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 300,
+              "HW": 400,
+              "W": 450,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 350,
+              "HW": 500,
+              "W": 600,
+              "duplex_credit": 200
+            }
+          }
+        },
+        {
+          "id": "F4",
+          "label": "F4",
+          "tariffs": {
+            "floor": {
+              "H": 250,
+              "HW": 350,
+              "W": 400,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 300,
+              "HW": 400,
+              "W": 450,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 350,
+              "HW": 500,
+              "W": 600,
+              "duplex_credit": 200
+            }
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "tariffs": {
+            "floor": {
+              "H": 400,
+              "HW": 600,
+              "W": 750,
+              "duplex_credit": 150
+            },
+            "competitive": {
+              "H": 500,
+              "HW": 700,
+              "W": 850,
+              "duplex_credit": 200
+            },
+            "normal": {
+              "H": 550,
+              "HW": 900,
+              "W": 1150,
+              "duplex_credit": 250
+            }
+          }
+        }
+      ],
+      "customer_profile": "standard_document"
+    },
+    {
+      "id": "hvs-white-75",
+      "name": "HVS Putih 75 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "F4",
+          "label": "F4",
+          "tariffs": {
+            "floor": {
+              "H": 300,
+              "HW": 350,
+              "W": 400,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 300,
+              "HW": 400,
+              "W": 450,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 350,
+              "HW": 500,
+              "W": 600,
+              "duplex_credit": 200
+            }
+          }
+        }
+      ],
+      "customer_profile": "standard_document"
+    },
+    {
+      "id": "hvs-white-80",
+      "name": "HVS Putih 80 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 250,
+              "HW": 350,
+              "W": 400,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 300,
+              "HW": 400,
+              "W": 450,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 350,
+              "HW": 500,
+              "W": 600,
+              "duplex_credit": 200
+            }
+          }
+        },
+        {
+          "id": "A4s",
+          "label": "A4s",
+          "tariffs": {
+            "floor": {
+              "H": 300,
+              "HW": 350,
+              "W": 400,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 300,
+              "HW": 400,
+              "W": 500,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 400,
+              "HW": 550,
+              "W": 650,
+              "duplex_credit": 200
+            }
+          }
+        },
+        {
+          "id": "F4",
+          "label": "F4",
+          "tariffs": {
+            "floor": {
+              "H": 300,
+              "HW": 350,
+              "W": 450,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 350,
+              "HW": 450,
+              "W": 500,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 400,
+              "HW": 550,
+              "W": 650,
+              "duplex_credit": 200
+            }
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "tariffs": {
+            "floor": {
+              "H": 450,
+              "HW": 650,
+              "W": 800,
+              "duplex_credit": 150
+            },
+            "competitive": {
+              "H": 500,
+              "HW": 750,
+              "W": 900,
+              "duplex_credit": 200
+            },
+            "normal": {
+              "H": 600,
+              "HW": 950,
+              "W": 1200,
+              "duplex_credit": 250
+            }
+          }
+        }
+      ],
+      "customer_profile": "standard_document"
+    },
+    {
+      "id": "hvs-color-70",
+      "name": "HVS Warna 70 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "F4",
+          "label": "F4",
+          "tariffs": {
+            "floor": {
+              "H": 300,
+              "HW": 400,
+              "W": 450,
+              "duplex_credit": 100
+            },
+            "competitive": {
+              "H": 350,
+              "HW": 450,
+              "W": 500,
+              "duplex_credit": 150
+            },
+            "normal": {
+              "H": 400,
+              "HW": 600,
+              "W": 700,
+              "duplex_credit": 200
+            }
+          }
+        }
+      ],
+      "customer_profile": "standard_document"
+    },
+    {
+      "id": "bc-buffalo",
+      "name": "BC / Buffalo / Manila",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "Folio",
+          "label": "Folio",
+          "tariffs": {
+            "floor": {
+              "H": 600,
+              "HW": 800,
+              "W": 950,
+              "duplex_credit": 250
+            },
+            "competitive": {
+              "H": 700,
+              "HW": 900,
+              "W": 1100,
+              "duplex_credit": 300
+            },
+            "normal": {
+              "H": 800,
+              "HW": 1200,
+              "W": 1450,
+              "duplex_credit": 400
+            }
+          }
+        }
+      ],
+      "customer_profile": "premium_document"
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 1550,
+              "HW": 1800,
+              "W": 1950,
+              "duplex_credit": 900
+            },
+            "competitive": {
+              "H": 1800,
+              "HW": 2100,
+              "W": 2250,
+              "duplex_credit": 1000
+            },
+            "normal": {
+              "H": 2100,
+              "HW": 2800,
+              "W": 3000,
+              "duplex_credit": 1200
+            }
+          }
+        },
+        {
+          "id": "F4",
+          "label": "F4",
+          "tariffs": {
+            "floor": {
+              "H": 1600,
+              "HW": 1850,
+              "W": 2000,
+              "duplex_credit": 900
+            },
+            "competitive": {
+              "H": 1850,
+              "HW": 2150,
+              "W": 2300,
+              "duplex_credit": 1000
+            },
+            "normal": {
+              "H": 2200,
+              "HW": 2900,
+              "W": 3100,
+              "duplex_credit": 1250
+            }
+          }
+        }
+      ],
+      "customer_profile": "premium_document"
+    },
+    {
+      "id": "ncr",
+      "name": "NCR",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "Folio",
+          "label": "Folio",
+          "tariffs": {
+            "floor": {
+              "H": 350,
+              "HW": 500,
+              "W": 650,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 400,
+              "HW": 600,
+              "W": 750,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 450,
+              "HW": 750,
+              "W": 1000,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "premium_document"
+    },
+    {
+      "id": "art-paper-150",
+      "name": "Art Paper 150 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "A3",
+          "label": "A3",
+          "tariffs": {
+            "floor": {
+              "H": 1700,
+              "HW": 1950,
+              "W": 2100,
+              "duplex_credit": 1000
+            },
+            "competitive": {
+              "H": 1950,
+              "HW": 2300,
+              "W": 2450,
+              "duplex_credit": 1100
+            },
+            "normal": {
+              "H": 2300,
+              "HW": 3050,
+              "W": 3250,
+              "duplex_credit": 1300
+            }
+          }
+        }
+      ],
+      "customer_profile": "premium_document"
+    },
+    {
+      "id": "photo-150-ds",
+      "name": "Kertas Foto Double Side 150 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 1250,
+              "HW": 1650,
+              "W": 2350,
+              "duplex_credit": 500
+            },
+            "competitive": {
+              "H": 1450,
+              "HW": 1950,
+              "W": 2750,
+              "duplex_credit": 600
+            },
+            "normal": {
+              "H": 2000,
+              "HW": 2650,
+              "W": 3800,
+              "duplex_credit": 800
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "photo-210-glossy",
+      "name": "Kertas Foto Glossy 210 gsm",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 1800,
+              "HW": 2200,
+              "W": 2900,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 2100,
+              "HW": 2600,
+              "W": 3450,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 2900,
+              "HW": 3600,
+              "W": 4700,
+              "duplex_credit": 0
+            }
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "tariffs": {
+            "floor": {
+              "H": 4200,
+              "HW": 5050,
+              "W": 6500,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 4950,
+              "HW": 5950,
+              "W": 7700,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 6800,
+              "HW": 8150,
+              "W": 10550,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "photo-220-ds",
+      "name": "Kertas Foto Double Side 220 gsm",
+      "duplex": true,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 2900,
+              "HW": 3300,
+              "W": 4000,
+              "duplex_credit": 1400
+            },
+            "competitive": {
+              "H": 3400,
+              "HW": 3900,
+              "W": 4700,
+              "duplex_credit": 1600
+            },
+            "normal": {
+              "H": 4650,
+              "HW": 5350,
+              "W": 6450,
+              "duplex_credit": 2200
+            }
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "tariffs": {
+            "floor": {
+              "H": 6700,
+              "HW": 7550,
+              "W": 9000,
+              "duplex_credit": 3500
+            },
+            "competitive": {
+              "H": 7900,
+              "HW": 8900,
+              "W": 10650,
+              "duplex_credit": 4000
+            },
+            "normal": {
+              "H": 10850,
+              "HW": 12250,
+              "W": 14600,
+              "duplex_credit": 5400
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "photo-230-glossy",
+      "name": "Kertas Foto Glossy 230 gsm",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 2050,
+              "HW": 2450,
+              "W": 3150,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 2400,
+              "HW": 2900,
+              "W": 3700,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 3300,
+              "HW": 3950,
+              "W": 5100,
+              "duplex_credit": 0
+            }
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "tariffs": {
+            "floor": {
+              "H": 4350,
+              "HW": 5200,
+              "W": 6650,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 5100,
+              "HW": 6100,
+              "W": 7850,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 7050,
+              "HW": 8400,
+              "W": 10800,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "photo-260-silky",
+      "name": "Kertas Foto Silky 260 gsm",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 4850,
+              "HW": 5250,
+              "W": 5950,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 5700,
+              "HW": 6200,
+              "W": 7000,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 7850,
+              "HW": 8500,
+              "W": 9650,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-glossy-120",
+      "name": "Stiker Glossy 120 gsm",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 2400,
+              "HW": 2850,
+              "W": 3500,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 2850,
+              "HW": 3350,
+              "W": 4150,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 3900,
+              "HW": 4600,
+              "W": 5700,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-glossy-135",
+      "name": "Stiker Glossy 135 gsm",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 2600,
+              "HW": 3000,
+              "W": 3700,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 3050,
+              "HW": 3550,
+              "W": 4350,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 4150,
+              "HW": 4850,
+              "W": 5950,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-premium-145",
+      "name": "Stiker Glossy Premium 145 gsm",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 2500,
+              "HW": 2900,
+              "W": 3600,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 2950,
+              "HW": 3450,
+              "W": 4250,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 4050,
+              "HW": 4700,
+              "W": 5850,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-transparent",
+      "name": "Stiker Transparan",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "tariffs": {
+            "floor": {
+              "H": 3100,
+              "HW": 3550,
+              "W": 4200,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 3650,
+              "HW": 4150,
+              "W": 5000,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 5050,
+              "HW": 5700,
+              "W": 6850,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-chromo",
+      "name": "Stiker Chromo / Bontax",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "tariffs": {
+            "floor": {
+              "H": 2750,
+              "HW": 3600,
+              "W": 5050,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 3250,
+              "HW": 4250,
+              "W": 5950,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 4450,
+              "HW": 5850,
+              "W": 8200,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-glossy-140",
+      "name": "Stiker Glossy 140",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "tariffs": {
+            "floor": {
+              "H": 4550,
+              "HW": 5400,
+              "W": 6850,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 5400,
+              "HW": 6400,
+              "W": 8100,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 7400,
+              "HW": 8750,
+              "W": 11150,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-vinyl-90",
+      "name": "Stiker Vinyl 90 micron",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "tariffs": {
+            "floor": {
+              "H": 9700,
+              "HW": 10550,
+              "W": 12000,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 11450,
+              "HW": 12450,
+              "W": 14150,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 15700,
+              "HW": 17100,
+              "W": 19450,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "photo_special"
+    },
+    {
+      "id": "sticker-vinyl-laser-pet",
+      "name": "Stiker Vinyl Laser PET White Glossy",
+      "duplex": false,
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "tariffs": {
+            "floor": {
+              "H": 5000,
+              "HW": 5550,
+              "W": 5650,
+              "duplex_credit": 0
+            },
+            "competitive": {
+              "H": 5800,
+              "HW": 6450,
+              "W": 6600,
+              "duplex_credit": 0
+            },
+            "normal": {
+              "H": 6850,
+              "HW": 8600,
+              "W": 8800,
+              "duplex_credit": 0
+            }
+          }
+        }
+      ],
+      "customer_profile": "laser_special"
+    }
+  ],
+  "production_profiles": [
+    {
+      "id": "bw-standard",
+      "name": "BW Standard",
+      "note": "Canon iRA 4051 / Brother / mesin lain yang memenuhi HPP kelompok."
+    },
+    {
+      "id": "color-document",
+      "name": "Color Document Standard",
+      "note": "Brother DCP-T720DW / Epson L121 untuk dokumen warna ekonomis."
+    },
+    {
+      "id": "laser-premium",
+      "name": "Laser / Premium Media",
+      "note": "Xerox C3375 untuk A3, laser color, dan media yang kompatibel."
+    },
+    {
+      "id": "photo-premium",
+      "name": "Photo / Premium Inkjet",
+      "note": "Epson L18050 untuk photo paper dan media inkjet premium."
+    }
+  ],
+  "media_source_labels": {
+    "store": "Dari Toko",
+    "customer": "Dibawa Pelanggan"
+  },
+  "customer_supplied_tariffs": {
+    "standard_document": {
+      "label": "Dokumen Standard",
+      "note": "HVS putih/warna yang dibawa pelanggan.",
+      "size_labels": {
+        "A4_F4": "A4 / A4s / F4 / Folio",
+        "A3": "A3 / A3+"
+      },
+      "sizes": {
+        "A4_F4": {
+          "floor": {
+            "H": 150,
+            "HW": 200,
+            "W": 250,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 150,
+            "HW": 250,
+            "W": 300,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 200,
+            "HW": 300,
+            "W": 400,
+            "duplex_credit": 0
+          }
+        },
+        "A3": {
+          "floor": {
+            "H": 250,
+            "HW": 350,
+            "W": 500,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 300,
+            "HW": 450,
+            "W": 600,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 400,
+            "HW": 600,
+            "W": 800,
+            "duplex_credit": 0
+          }
+        }
+      }
+    },
+    "premium_document": {
+      "label": "Dokumen Premium / Media Khusus",
+      "note": "BC, Linen, NCR, Art Paper dan media dokumen khusus milik pelanggan.",
+      "size_labels": {
+        "A4_F4": "A4 / A4s / F4 / Folio",
+        "A3": "A3 / A3+"
+      },
+      "sizes": {
+        "A4_F4": {
+          "floor": {
+            "H": 250,
+            "HW": 400,
+            "W": 550,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 300,
+            "HW": 500,
+            "W": 700,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 400,
+            "HW": 700,
+            "W": 1000,
+            "duplex_credit": 0
+          }
+        },
+        "A3": {
+          "floor": {
+            "H": 450,
+            "HW": 700,
+            "W": 1000,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 550,
+            "HW": 900,
+            "W": 1300,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 750,
+            "HW": 1200,
+            "W": 1800,
+            "duplex_credit": 0
+          }
+        }
+      }
+    },
+    "photo_special": {
+      "label": "Foto / Inkjet Premium / Stiker",
+      "note": "Photo paper, stiker inkjet, transparan dan media berisiko lebih tinggi milik pelanggan.",
+      "size_labels": {
+        "A4_F4": "A4 / A4s / F4 / Folio",
+        "A3": "A3 / A3+"
+      },
+      "sizes": {
+        "A4_F4": {
+          "floor": {
+            "H": 300,
+            "HW": 700,
+            "W": 1400,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 350,
+            "HW": 850,
+            "W": 1650,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 450,
+            "HW": 1150,
+            "W": 2250,
+            "duplex_credit": 0
+          }
+        },
+        "A3": {
+          "floor": {
+            "H": 550,
+            "HW": 1300,
+            "W": 2600,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 650,
+            "HW": 1600,
+            "W": 3200,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 850,
+            "HW": 2200,
+            "W": 4500,
+            "duplex_credit": 0
+          }
+        }
+      }
+    },
+    "laser_special": {
+      "label": "Laser / Media Khusus",
+      "note": "Media khusus untuk jalur laser, termasuk Vinyl Laser PET milik pelanggan.",
+      "size_labels": {
+        "A4_F4": "A4 / A4s / F4 / Folio",
+        "A3": "A3 / A3+"
+      },
+      "sizes": {
+        "A4_F4": {
+          "floor": {
+            "H": 250,
+            "HW": 450,
+            "W": 650,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 300,
+            "HW": 550,
+            "W": 800,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 400,
+            "HW": 750,
+            "W": 1100,
+            "duplex_credit": 0
+          }
+        },
+        "A3": {
+          "floor": {
+            "H": 450,
+            "HW": 700,
+            "W": 950,
+            "duplex_credit": 0
+          },
+          "competitive": {
+            "H": 550,
+            "HW": 900,
+            "W": 1200,
+            "duplex_credit": 0
+          },
+          "normal": {
+            "H": 700,
+            "HW": 1200,
+            "W": 1600,
+            "duplex_credit": 0
+          }
+        }
+      }
+    }
+  }
+}
