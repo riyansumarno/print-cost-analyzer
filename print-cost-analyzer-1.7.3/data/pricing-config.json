@@ -3,7 +3,7 @@
   "price_version": "2026.08-D",
   "updated_at": "2026-08-21",
   "currency": "IDR",
-  "active_tier": "competitive",
+  "active_tier": "normal",
   "tier_labels": {
     "floor": "Lantai",
     "competitive": "Kompetitif",
