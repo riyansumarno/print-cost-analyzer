@@ -1,0 +1,2768 @@
+{
+  "schema_version": 6,
+  "app_version": "2.11.0",
+  "price_version": "2026.09-BAWA-SENDIRI-HANDLING-MULTIFORMAT",
+  "updated_at": "2026-09-20",
+  "currency": "IDR",
+  "pricing_model": {
+    "strategy": "marginal_volume_by_color_class",
+    "strategy_note": "Harga 1 sisi memakai tarif volume progresif per kelas warna. Harga 2 sisi memakai tarif pasangan tetap per lembar.",
+    "rounding": 100,
+    "color_classes": {
+      "H": {
+        "label": "Hitam-putih",
+        "short": "BW"
+      },
+      "HW": {
+        "label": "Sebagian warna",
+        "short": "Sebagian"
+      },
+      "W": {
+        "label": "Full warna",
+        "short": "Full"
+      },
+      "D": {
+        "label": "Warna pekat / full bleed",
+        "short": "Pekat"
+      }
+    },
+    "dense_thresholds": {
+      "color_coverage": 38,
+      "strong_color_coverage": 9,
+      "ink_coverage": 55,
+      "raster_area": 45
+    },
+    "customer_media_service_floor": {
+      "A4_F4": {
+        "regular": {
+          "H": 200,
+          "HW": 300,
+          "W": 400,
+          "D": 800
+        },
+        "volume": {
+          "H": 150,
+          "HW": 250,
+          "W": 300,
+          "D": 800
+        },
+        "duplex_pairs": {
+          "H+H": 300,
+          "H+HW": 400,
+          "H+W": 500,
+          "H+D": 900,
+          "HW+HW": 500,
+          "HW+W": 600,
+          "HW+D": 1000,
+          "W+W": 700,
+          "W+D": 1200,
+          "D+D": 1500
+        }
+      },
+      "note": "Bawa Sendiri hanya menghitung jasa cetak. Tarif ditentukan oleh ukuran dan kelas warna, bukan harga bahan/media."
+    },
+    "volume_policy": {
+      "basis": "output_color_class",
+      "count_scope": "job_after_imposition_and_copies",
+      "duplex_pair_rule": "flat_pair_table",
+      "dense_auto_volume": false,
+      "notes": "Harga 1 sisi dihitung progresif per kelas warna. Harga 2 sisi selalu memakai tarif pasangan tetap dan tidak memiliki ambang volume."
+    }
+  },
+  "sizes": [
+    {
+      "id": "A7",
+      "label": "A7",
+      "factor": 0.5
+    },
+    {
+      "id": "A6",
+      "label": "A6",
+      "factor": 0.55
+    },
+    {
+      "id": "A5",
+      "label": "A5",
+      "factor": 0.65
+    },
+    {
+      "id": "B5",
+      "label": "B5",
+      "factor": 0.8
+    },
+    {
+      "id": "A4",
+      "label": "A4",
+      "factor": 1.0
+    },
+    {
+      "id": "A4s",
+      "label": "A4s",
+      "factor": 1.0
+    },
+    {
+      "id": "F4",
+      "label": "F4",
+      "factor": 1.0
+    },
+    {
+      "id": "Folio",
+      "label": "Folio",
+      "factor": 1.0
+    },
+    {
+      "id": "B4",
+      "label": "B4",
+      "factor": 1.5
+    },
+    {
+      "id": "A3",
+      "label": "A3",
+      "factor": 2.0
+    },
+    {
+      "id": "A3+",
+      "label": "A3+",
+      "factor": 2.3
+    }
+  ],
+  "materials": [
+    {
+      "id": "hvs-white-70-80",
+      "name": "HVS Putih 70–80 gsm",
+      "duplex": true,
+      "family": "document",
+      "gsm": 75,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 250,
+          "regular": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 1000,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 250,
+              "HW": 400,
+              "W": 800,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 250,
+            "HW": 50,
+            "W": 25,
+            "D": null
+          }
+        },
+        {
+          "id": "F4",
+          "label": "F4",
+          "volume_min_sheets": 250,
+          "regular": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 1000,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 250,
+              "HW": 400,
+              "W": 800,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 250,
+            "HW": 50,
+            "W": 25,
+            "D": null
+          }
+        },
+        {
+          "id": "A4s",
+          "label": "A4s",
+          "volume_min_sheets": 250,
+          "regular": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 1000,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 250,
+              "HW": 400,
+              "W": 800,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 250,
+            "HW": 50,
+            "W": 25,
+            "D": null
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "volume_min_sheets": 100,
+          "regular": {
+            "simplex": {
+              "H": 800,
+              "HW": 1300,
+              "W": 2500,
+              "D": 3800
+            },
+            "duplex_pairs": {
+              "H+H": 800,
+              "H+HW": 1200,
+              "H+W": 2000,
+              "H+D": 3700,
+              "HW+HW": 1600,
+              "HW+W": 2400,
+              "HW+D": 4200,
+              "W+W": 3000,
+              "W+D": 4900,
+              "D+D": 6100
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 600,
+              "HW": 1000,
+              "W": 2000,
+              "D": 3800
+            },
+            "duplex_pairs": {
+              "H+H": 800,
+              "H+HW": 1200,
+              "H+W": 2000,
+              "H+D": 3700,
+              "HW+HW": 1600,
+              "HW+W": 2400,
+              "HW+D": 4200,
+              "W+W": 3000,
+              "W+D": 4900,
+              "D+D": 6100
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 400,
+              "HW": 600,
+              "W": 800,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 600,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "volume_thresholds": {
+            "H": 100,
+            "HW": 20,
+            "W": 10,
+            "D": null
+          }
+        }
+      ],
+      "category": "Dokumen"
+    },
+    {
+      "id": "hvs-color-70",
+      "name": "HVS Warna 70 gsm",
+      "duplex": true,
+      "family": "document",
+      "gsm": 70,
+      "sizes": [
+        {
+          "id": "F4",
+          "label": "F4",
+          "volume_min_sheets": 250,
+          "regular": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 1000,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 250,
+              "HW": 400,
+              "W": 800,
+              "D": 1500
+            },
+            "duplex_pairs": {
+              "H+H": 400,
+              "H+HW": 600,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 800,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1500,
+              "W+D": 2400,
+              "D+D": 2500
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 250,
+            "HW": 50,
+            "W": 25,
+            "D": null
+          }
+        }
+      ],
+      "category": "Dokumen"
+    },
+    {
+      "id": "bc-buffalo",
+      "name": "BC / Buffalo / Manila",
+      "duplex": true,
+      "family": "document-premium",
+      "sizes": [
+        {
+          "id": "Folio",
+          "label": "Folio",
+          "volume_min_sheets": 150,
+          "regular": {
+            "simplex": {
+              "H": 500,
+              "HW": 800,
+              "W": 1400,
+              "D": 2000
+            },
+            "duplex_pairs": {
+              "H+H": 500,
+              "H+HW": 700,
+              "H+W": 1100,
+              "H+D": 2000,
+              "HW+HW": 900,
+              "HW+W": 1300,
+              "HW+D": 2200,
+              "W+W": 1600,
+              "W+D": 2700,
+              "D+D": 3500
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 400,
+              "HW": 600,
+              "W": 1100,
+              "D": 2000
+            },
+            "duplex_pairs": {
+              "H+H": 500,
+              "H+HW": 700,
+              "H+W": 1100,
+              "H+D": 2000,
+              "HW+HW": 900,
+              "HW+W": 1300,
+              "HW+D": 2200,
+              "W+W": 1600,
+              "W+D": 2700,
+              "D+D": 3500
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 150,
+            "HW": 40,
+            "W": 20,
+            "D": null
+          }
+        }
+      ],
+      "category": "Dokumen"
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "duplex": true,
+      "family": "document-premium",
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 50,
+          "regular": {
+            "simplex": {
+              "H": 1700,
+              "HW": 2000,
+              "W": 2800,
+              "D": 3800
+            },
+            "duplex_pairs": {
+              "H+H": 1600,
+              "H+HW": 2200,
+              "H+W": 2600,
+              "H+D": 4000,
+              "HW+HW": 2400,
+              "HW+W": 2900,
+              "HW+D": 4300,
+              "W+W": 3300,
+              "W+D": 4800,
+              "D+D": 5500
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 1300,
+              "HW": 1600,
+              "W": 2200,
+              "D": 3800
+            },
+            "duplex_pairs": {
+              "H+H": 1600,
+              "H+HW": 2200,
+              "H+W": 2600,
+              "H+D": 4000,
+              "HW+HW": 2400,
+              "HW+W": 2900,
+              "HW+D": 4300,
+              "W+W": 3300,
+              "W+D": 4800,
+              "D+D": 5500
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 50,
+            "HW": 15,
+            "W": 10,
+            "D": null
+          }
+        },
+        {
+          "id": "F4",
+          "label": "F4",
+          "volume_min_sheets": 40,
+          "regular": {
+            "simplex": {
+              "H": 1900,
+              "HW": 2400,
+              "W": 3300,
+              "D": 4400
+            },
+            "duplex_pairs": {
+              "H+H": 1800,
+              "H+HW": 2600,
+              "H+W": 3100,
+              "H+D": 4600,
+              "HW+HW": 2900,
+              "HW+W": 3400,
+              "HW+D": 4900,
+              "W+W": 3900,
+              "W+D": 5700,
+              "D+D": 6400
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 1500,
+              "HW": 1900,
+              "W": 2600,
+              "D": 4400
+            },
+            "duplex_pairs": {
+              "H+H": 1800,
+              "H+HW": 2600,
+              "H+W": 3100,
+              "H+D": 4600,
+              "HW+HW": 2900,
+              "HW+W": 3400,
+              "HW+D": 4900,
+              "W+W": 3900,
+              "W+D": 5700,
+              "D+D": 6400
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 40,
+            "HW": 15,
+            "W": 10,
+            "D": null
+          }
+        }
+      ],
+      "category": "Dokumen"
+    },
+    {
+      "id": "ncr",
+      "name": "NCR",
+      "duplex": false,
+      "family": "ncr",
+      "sizes": [
+        {
+          "id": "Folio",
+          "label": "Folio",
+          "volume_min_sheets": 125,
+          "regular": {
+            "simplex": {
+              "H": 700,
+              "HW": 900,
+              "W": 1500,
+              "D": 2000
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 500,
+              "HW": 700,
+              "W": 1200,
+              "D": 2000
+            },
+            "duplex_pairs": {}
+          },
+          "note": "NCR hanya simplex pada model produksi standar.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 125,
+            "HW": 30,
+            "W": 20,
+            "D": null
+          }
+        }
+      ],
+      "category": "Media khusus"
+    },
+    {
+      "id": "art-paper-150",
+      "name": "Art Paper 150 gsm",
+      "duplex": true,
+      "family": "coated",
+      "gsm": 150,
+      "sizes": [
+        {
+          "id": "A3",
+          "label": "A3",
+          "volume_min_sheets": 30,
+          "regular": {
+            "simplex": {
+              "H": 2500,
+              "HW": 3800,
+              "W": 5000,
+              "D": 7500
+            },
+            "duplex_pairs": {
+              "H+H": 3000,
+              "H+HW": 3600,
+              "H+W": 4400,
+              "H+D": 7400,
+              "HW+HW": 4400,
+              "HW+W": 5100,
+              "HW+D": 8000,
+              "W+W": 5800,
+              "W+D": 8800,
+              "D+D": 10700
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 2000,
+              "HW": 3000,
+              "W": 4000,
+              "D": 7500
+            },
+            "duplex_pairs": {
+              "H+H": 3000,
+              "H+HW": 3600,
+              "H+W": 4400,
+              "H+D": 7400,
+              "HW+HW": 4400,
+              "HW+W": 5100,
+              "HW+D": 8000,
+              "W+W": 5800,
+              "W+D": 8800,
+              "D+D": 10700
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 400,
+              "HW": 600,
+              "W": 800,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 600,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "volume_thresholds": {
+            "H": 30,
+            "HW": 10,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Media khusus"
+    },
+    {
+      "id": "photo-150-ds",
+      "name": "Kertas Foto Double Side 150 gsm",
+      "duplex": true,
+      "family": "photo",
+      "gsm": 150,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 30,
+          "regular": {
+            "simplex": {
+              "H": 2500,
+              "HW": 3200,
+              "W": 4400,
+              "D": 5700
+            },
+            "duplex_pairs": {
+              "H+H": 3200,
+              "H+HW": 3600,
+              "H+W": 4400,
+              "H+D": 6400,
+              "HW+HW": 4000,
+              "HW+W": 4800,
+              "HW+D": 6900,
+              "W+W": 5600,
+              "W+D": 7900,
+              "D+D": 8800
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 2000,
+              "HW": 2500,
+              "W": 3500,
+              "D": 5700
+            },
+            "duplex_pairs": {
+              "H+H": 3200,
+              "H+HW": 3600,
+              "H+W": 4400,
+              "H+D": 6400,
+              "HW+HW": 4000,
+              "HW+W": 4800,
+              "HW+D": 6900,
+              "W+W": 5600,
+              "W+D": 7900,
+              "D+D": 8800
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 30,
+            "HW": 10,
+            "W": 10,
+            "D": null
+          }
+        }
+      ],
+      "category": "Foto"
+    },
+    {
+      "id": "photo-glossy-210-230",
+      "name": "Kertas Foto Glossy 210–230 gsm",
+      "duplex": false,
+      "family": "photo",
+      "gsm": 230,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 25,
+          "regular": {
+            "simplex": {
+              "H": 3200,
+              "HW": 3800,
+              "W": 5000,
+              "D": 6900
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 2500,
+              "HW": 3000,
+              "W": 4000,
+              "D": 6900
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Media foto: coverage tinggi dapat dipromosikan ke DENSE.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 25,
+            "HW": 10,
+            "W": 5,
+            "D": null
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "volume_min_sheets": 15,
+          "regular": {
+            "simplex": {
+              "H": 6300,
+              "HW": 7500,
+              "W": 10000,
+              "D": 13800
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 5000,
+              "HW": 6000,
+              "W": 8000,
+              "D": 13800
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Media foto: coverage tinggi dapat dipromosikan ke DENSE.",
+          "customer_regular": {
+            "simplex": {
+              "H": 400,
+              "HW": 600,
+              "W": 800,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 600,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "volume_thresholds": {
+            "H": 15,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Foto"
+    },
+    {
+      "id": "photo-220-ds",
+      "name": "Kertas Foto Double Side 220 gsm",
+      "duplex": true,
+      "family": "photo",
+      "gsm": 220,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 20,
+          "regular": {
+            "simplex": {
+              "H": 3800,
+              "HW": 4400,
+              "W": 5700,
+              "D": 7500
+            },
+            "duplex_pairs": {
+              "H+H": 4800,
+              "H+HW": 5200,
+              "H+W": 6000,
+              "H+D": 8800,
+              "HW+HW": 5600,
+              "HW+W": 6400,
+              "HW+D": 9300,
+              "W+W": 7200,
+              "W+D": 10300,
+              "D+D": 11800
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 3000,
+              "HW": 3500,
+              "W": 4500,
+              "D": 7500
+            },
+            "duplex_pairs": {
+              "H+H": 4800,
+              "H+HW": 5200,
+              "H+W": 6000,
+              "H+D": 8800,
+              "HW+HW": 5600,
+              "HW+W": 6400,
+              "HW+D": 9300,
+              "W+W": 7200,
+              "W+D": 10300,
+              "D+D": 11800
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 20,
+            "HW": 10,
+            "W": 5,
+            "D": null
+          }
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "volume_min_sheets": 10,
+          "regular": {
+            "simplex": {
+              "H": 7500,
+              "HW": 10000,
+              "W": 12500,
+              "D": 17500
+            },
+            "duplex_pairs": {
+              "H+H": 9600,
+              "H+HW": 11200,
+              "H+W": 12800,
+              "H+D": 19600,
+              "HW+HW": 12800,
+              "HW+W": 14400,
+              "HW+D": 21500,
+              "W+W": 16000,
+              "W+D": 23500,
+              "D+D": 27400
+            }
+          },
+          "volume": {
+            "simplex": {
+              "H": 6000,
+              "HW": 8000,
+              "W": 10000,
+              "D": 17500
+            },
+            "duplex_pairs": {
+              "H+H": 9600,
+              "H+HW": 11200,
+              "H+W": 12800,
+              "H+D": 19600,
+              "HW+HW": 12800,
+              "HW+W": 14400,
+              "HW+D": 21500,
+              "W+W": 16000,
+              "W+D": 23500,
+              "D+D": 27400
+            }
+          },
+          "note": "Harga 1 sisi memakai tarif volume per kelas warna sesuai ambang. Harga 2 sisi memakai tarif pasangan tetap sejak lembar pertama.",
+          "customer_regular": {
+            "simplex": {
+              "H": 400,
+              "HW": 600,
+              "W": 800,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 300,
+              "HW": 500,
+              "W": 600,
+              "D": 1600
+            },
+            "duplex_pairs": {
+              "H+H": 600,
+              "H+HW": 800,
+              "H+W": 1000,
+              "H+D": 1800,
+              "HW+HW": 1000,
+              "HW+W": 1200,
+              "HW+D": 2000,
+              "W+W": 1400,
+              "W+D": 2400,
+              "D+D": 3000
+            }
+          },
+          "volume_thresholds": {
+            "H": 10,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Foto"
+    },
+    {
+      "id": "photo-260-silky",
+      "name": "Kertas Foto Silky 260 gsm",
+      "duplex": false,
+      "family": "photo",
+      "gsm": 260,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 15,
+          "regular": {
+            "simplex": {
+              "H": 5000,
+              "HW": 6300,
+              "W": 8200,
+              "D": 10000
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 4000,
+              "HW": 5000,
+              "W": 6500,
+              "D": 10000
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Media foto: coverage tinggi dapat dipromosikan ke DENSE.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 15,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Foto"
+    },
+    {
+      "id": "sticker-glossy-120-145",
+      "name": "Stiker Glossy 120–145 gsm",
+      "duplex": false,
+      "family": "sticker-inkjet",
+      "gsm": 145,
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 25,
+          "regular": {
+            "simplex": {
+              "H": 3500,
+              "HW": 4000,
+              "W": 5000,
+              "D": 6000
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 2800,
+              "HW": 3200,
+              "W": 4000,
+              "D": 6000
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Stiker hanya simplex.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 25,
+            "HW": 10,
+            "W": 5,
+            "D": null
+          }
+        },
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "volume_min_sheets": 15,
+          "regular": {
+            "simplex": {
+              "H": 6300,
+              "HW": 7500,
+              "W": 10000,
+              "D": 11300
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 5000,
+              "HW": 6000,
+              "W": 8000,
+              "D": 11300
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Stiker hanya simplex.",
+          "customer_regular": {
+            "simplex": {
+              "H": 500,
+              "HW": 700,
+              "W": 950,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 350,
+              "HW": 600,
+              "W": 700,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "volume_thresholds": {
+            "H": 15,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Stiker"
+    },
+    {
+      "id": "sticker-transparent",
+      "name": "Stiker Transparan",
+      "duplex": false,
+      "family": "sticker-inkjet",
+      "sizes": [
+        {
+          "id": "A4",
+          "label": "A4",
+          "volume_min_sheets": 20,
+          "regular": {
+            "simplex": {
+              "H": 3800,
+              "HW": 4400,
+              "W": 5700,
+              "D": 6300
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 3000,
+              "HW": 3500,
+              "W": 4500,
+              "D": 6300
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Stiker hanya simplex.",
+          "customer_regular": {
+            "simplex": {
+              "H": 200,
+              "HW": 300,
+              "W": 400,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 150,
+              "HW": 250,
+              "W": 300,
+              "D": 800
+            },
+            "duplex_pairs": {
+              "H+H": 300,
+              "H+HW": 400,
+              "H+W": 500,
+              "H+D": 900,
+              "HW+HW": 500,
+              "HW+W": 600,
+              "HW+D": 1000,
+              "W+W": 700,
+              "W+D": 1200,
+              "D+D": 1500
+            }
+          },
+          "volume_thresholds": {
+            "H": 20,
+            "HW": 10,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Stiker"
+    },
+    {
+      "id": "sticker-chromo",
+      "name": "Stiker Chromo / Bontax",
+      "duplex": false,
+      "family": "sticker",
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "volume_min_sheets": 20,
+          "regular": {
+            "simplex": {
+              "H": 4400,
+              "HW": 5700,
+              "W": 7500,
+              "D": 8800
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 3500,
+              "HW": 4500,
+              "W": 6000,
+              "D": 8800
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Stiker hanya simplex.",
+          "customer_regular": {
+            "simplex": {
+              "H": 500,
+              "HW": 700,
+              "W": 950,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 350,
+              "HW": 600,
+              "W": 700,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "volume_thresholds": {
+            "H": 20,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Stiker"
+    },
+    {
+      "id": "sticker-vinyl-90",
+      "name": "Stiker Vinyl 90 micron",
+      "duplex": false,
+      "family": "sticker-inkjet",
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "volume_min_sheets": 10,
+          "regular": {
+            "simplex": {
+              "H": 10000,
+              "HW": 12500,
+              "W": 15000,
+              "D": 17500
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 8000,
+              "HW": 10000,
+              "W": 12000,
+              "D": 17500
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Stiker hanya simplex.",
+          "customer_regular": {
+            "simplex": {
+              "H": 500,
+              "HW": 700,
+              "W": 950,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 350,
+              "HW": 600,
+              "W": 700,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "volume_thresholds": {
+            "H": 10,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Stiker"
+    },
+    {
+      "id": "sticker-vinyl-laser-pet",
+      "name": "Stiker Vinyl Laser PET White Glossy",
+      "duplex": false,
+      "family": "sticker-laser",
+      "sizes": [
+        {
+          "id": "A3+",
+          "label": "A3/A3+",
+          "volume_min_sheets": 10,
+          "regular": {
+            "simplex": {
+              "H": 7500,
+              "HW": 10000,
+              "W": 12500,
+              "D": 15000
+            },
+            "duplex_pairs": {}
+          },
+          "volume": {
+            "simplex": {
+              "H": 6000,
+              "HW": 8000,
+              "W": 10000,
+              "D": 15000
+            },
+            "duplex_pairs": {}
+          },
+          "note": "Stiker hanya simplex.",
+          "customer_regular": {
+            "simplex": {
+              "H": 500,
+              "HW": 700,
+              "W": 950,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "customer_volume": {
+            "simplex": {
+              "H": 350,
+              "HW": 600,
+              "W": 700,
+              "D": 1850
+            },
+            "duplex_pairs": {
+              "H+H": 700,
+              "H+HW": 950,
+              "H+W": 1150,
+              "H+D": 2100,
+              "HW+HW": 1150,
+              "HW+W": 1400,
+              "HW+D": 2300,
+              "W+W": 1650,
+              "W+D": 2800,
+              "D+D": 3450
+            }
+          },
+          "volume_thresholds": {
+            "H": 10,
+            "HW": 5,
+            "W": 5,
+            "D": null
+          }
+        }
+      ],
+      "category": "Stiker"
+    }
+  ],
+  "presets": [
+    {
+      "id": "default",
+      "name": "Manual",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "bw-a4-simplex",
+      "name": "Dokumen BW A4 · 1 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "bw",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "bw-a4-duplex",
+      "name": "Dokumen BW A4 · 2 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "duplex-auto",
+        "flip": "long",
+        "colorMode": "bw",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "bw-f4-simplex",
+      "name": "Dokumen BW F4 · 1 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "F4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "bw",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "bw-f4-duplex",
+      "name": "Dokumen BW F4 · 2 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "F4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "duplex-auto",
+        "flip": "long",
+        "colorMode": "bw",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "warna-a4-simplex",
+      "name": "Dokumen warna A4 · 1 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "warna-f4-simplex",
+      "name": "Dokumen warna F4 · 1 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "F4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "bw-a3-simplex",
+      "name": "Dokumen BW A3 · 1 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A3",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "bw",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "warna-a3-simplex",
+      "name": "Dokumen warna A3 · 1 sisi",
+      "group": "Dokumen",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A3",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "hemat-2up-a4",
+      "name": "Hemat 2 halaman di A4 · 1 sisi",
+      "group": "Beberapa Halaman & Booklet",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 2,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "landscape",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "hemat-2up-a4-duplex",
+      "name": "Hemat 2 halaman di A4 · 2 sisi",
+      "group": "Beberapa Halaman & Booklet",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 2,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "landscape",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "duplex-auto",
+        "flip": "short",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "booklet-a5",
+      "name": "Booklet A5 dari A4",
+      "group": "Beberapa Halaman & Booklet",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "booklet",
+        "pagesPerSide": 2,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "landscape",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "duplex-auto",
+        "flip": "short",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "booklet-a4-a3",
+      "name": "Booklet A4 dari A3",
+      "group": "Beberapa Halaman & Booklet",
+      "settings": {
+        "mediaSource": "store",
+        "material": "hvs-white-70-80",
+        "size": "A3",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "booklet",
+        "pagesPerSide": 2,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "landscape",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "duplex-auto",
+        "flip": "short",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "foto-a4",
+      "name": "Foto A4",
+      "group": "Foto & Media Khusus",
+      "settings": {
+        "mediaSource": "store",
+        "material": "photo-glossy-210-230",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "foto-a3",
+      "name": "Foto A3",
+      "group": "Foto & Media Khusus",
+      "settings": {
+        "mediaSource": "store",
+        "material": "photo-glossy-210-230",
+        "size": "A3",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "art-paper-a3",
+      "name": "Art Paper A3 · warna",
+      "group": "Foto & Media Khusus",
+      "settings": {
+        "mediaSource": "store",
+        "material": "art-paper-150",
+        "size": "A3",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "stiker-a4",
+      "name": "Stiker Glossy A4",
+      "group": "Foto & Media Khusus",
+      "settings": {
+        "mediaSource": "store",
+        "material": "sticker-glossy-120-145",
+        "size": "A4",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "stiker-a3plus",
+      "name": "Stiker Glossy A3+",
+      "group": "Foto & Media Khusus",
+      "settings": {
+        "mediaSource": "store",
+        "material": "sticker-glossy-120-145",
+        "size": "A3+",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    },
+    {
+      "id": "chromo-a3plus",
+      "name": "Stiker Chromo/Bontax A3+",
+      "group": "Foto & Media Khusus",
+      "settings": {
+        "mediaSource": "store",
+        "material": "sticker-chromo",
+        "size": "A3+",
+        "pageRangeMode": "all",
+        "pageRange": "",
+        "pageSubset": "all",
+        "pageOrder": "normal",
+        "copies": 1,
+        "collate": true,
+        "layoutMode": "normal",
+        "pagesPerSide": 1,
+        "nupOrder": "ltr",
+        "scaleMode": "fit",
+        "customScale": 100,
+        "orientation": "auto",
+        "bookletBinding": "left",
+        "pageBorder": true,
+        "sideMode": "simplex",
+        "flip": "long",
+        "colorMode": "auto",
+        "frontColor": "auto",
+        "backColor": "auto"
+      }
+    }
+  ],
+  "media_source_labels": {
+    "store": "Dari toko",
+    "customer": "Bawa Sendiri"
+  },
+  "migration": {
+    "from": "2.3.1 / schema v6",
+    "notes": "2.9.0: Pengaturan Cetak memakai empat tab utama dengan ringkasan aktif; area unggah diperbaiki agar responsif. Tidak ada perubahan tarif dari 2.8.0."
+  },
+  "size_catalog": [
+    {
+      "group": "Seri A",
+      "items": [
+        {
+          "id": "A7",
+          "label": "A7",
+          "dimensions_mm": [
+            74,
+            105
+          ]
+        },
+        {
+          "id": "A6",
+          "label": "A6",
+          "dimensions_mm": [
+            105,
+            148
+          ]
+        },
+        {
+          "id": "A5",
+          "label": "A5",
+          "dimensions_mm": [
+            148,
+            210
+          ]
+        },
+        {
+          "id": "A4",
+          "label": "A4",
+          "dimensions_mm": [
+            210,
+            297
+          ]
+        },
+        {
+          "id": "A3",
+          "label": "A3",
+          "dimensions_mm": [
+            297,
+            420
+          ]
+        },
+        {
+          "id": "A3+",
+          "label": "A3+",
+          "dimensions_mm": [
+            329,
+            483
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Seri B",
+      "items": [
+        {
+          "id": "B7",
+          "label": "B7",
+          "dimensions_mm": [
+            88,
+            125
+          ]
+        },
+        {
+          "id": "B6",
+          "label": "B6",
+          "dimensions_mm": [
+            125,
+            176
+          ]
+        },
+        {
+          "id": "B5",
+          "label": "B5",
+          "dimensions_mm": [
+            176,
+            250
+          ]
+        },
+        {
+          "id": "B4",
+          "label": "B4",
+          "dimensions_mm": [
+            250,
+            353
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Seri F / Folio",
+      "items": [
+        {
+          "id": "F5",
+          "label": "F5",
+          "dimensions_mm": [
+            165,
+            210
+          ]
+        },
+        {
+          "id": "F4",
+          "label": "F4",
+          "dimensions_mm": [
+            210,
+            330
+          ]
+        },
+        {
+          "id": "Folio",
+          "label": "Folio",
+          "dimensions_mm": [
+            216,
+            330
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Ukuran khusus",
+      "items": [
+        {
+          "id": "A4s",
+          "label": "A4s"
+        }
+      ]
+    }
+  ]
+}
