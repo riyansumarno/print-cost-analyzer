@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="dark" name="color-scheme"/>
+<meta content="#08111f" name="theme-color"/>
+<title>Print Cost Analyzer</title>
+<link href="assets/css/style.css?v=2.11.0" rel="stylesheet"/>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+<div aria-hidden="true" class="brand-mark">
+<svg role="img" viewbox="0 0 24 24"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M7 14h10v7H7z"></path></svg>
+</div>
+<div class="brand-copy">
+<h1>Print Cost Analyzer</h1>
+<p>Analisis warna dan estimasi harga cetak PDF, Word, dan gambar</p>
+</div>
+<div class="topbar-actions">
+<div class="topbar-meta">
+<span class="status-dot"></span>
+<span>Print Cost Analyzer 2.11.0</span>
+</div>
+</div>
+</header>
+<main aria-label="Print Cost Analyzer" class="workspace workspace-modern">
+<section aria-label="Berkas dan pengaturan cetak" class="setup-workspace"><section aria-labelledby="uploadTitle" class="panel upload-panel upload-panel-compact">
+<div class="panel-heading upload-heading">
+<div>
+<h2 id="uploadTitle">Berkas Cetak</h2>
+<p>Pilih PDF, Word, atau beberapa gambar sekaligus. Semua diproses menjadi dokumen analisis yang sama.</p>
+</div>
+</div>
+
+
+
+
+<div class="source-view source-document-view" id="sourceDocumentView"><input accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp,.bmp,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/jpeg,image/png,image/webp,image/bmp" hidden="" id="fileInput" multiple="" type="file"/><label class="drop-zone" for="fileInput" id="dropZone" tabindex="0">
+<span aria-hidden="true" class="drop-icon">
+<svg viewbox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 14v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4"></path></svg>
+</span>
+<strong id="uploadText">Klik atau seret berkas ke sini</strong>
+<span>PDF · DOC/DOCX · JPG/PNG/WebP/BMP · gambar dapat dipilih sekaligus</span>
+</label><div class="selected-file" hidden="" id="selectedFile">
+<div class="file-badge" id="fileBadge">FILE</div>
+<div class="selected-file-copy">
+<strong id="selectedFileName">-</strong>
+<span id="selectedFileMeta">-</span>
+</div>
+
+<div class="selected-file-actions"><button class="file-action-button" id="changeFileBtn" type="button">Ganti berkas</button><button aria-label="Hapus file" class="icon-button danger" id="clearBtn" title="Hapus file" type="button">
+<svg viewbox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button></div></div><div class="privacy-card">
+<svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 4.7-2.9 8.2-7 10-4.1-1.8-7-5.3-7-10V6l7-3zM9 12l2 2 4-4"></path></svg>
+<p>Berkas diproses di browser. Gambar dan Word dikonversi ke PDF sebelum dianalisis.</p>
+</div></div></section><section class="panel settings-panel workbench-pane"><div class="panel-heading workbench-heading"><div><h2>Pengaturan Cetak</h2><p>Preset, halaman, media, tata letak, sisi cetak, dan warna.</p></div></div><div class="settings-empty" id="settingsEmpty"><div aria-hidden="true" class="settings-empty-icon">⚙</div><strong>Pengaturan siap digunakan</strong><span>Unggah atau seret berkas di panel kiri untuk mengaktifkan pengaturan cetak.</span></div><section aria-label="Pengaturan Cetak" class="print-settings acrobat-settings settings-tabbed" hidden="" id="printSettings">
+<div class="settings-topline">
+<label class="field-control preset-control"><span>Preset</span><select id="presetSelect"></select><small class="field-help">Pilihan yang paling sering digunakan.</small></label>
+<div class="settings-active-summary" aria-label="Ringkasan pengaturan aktif">
+<div class="settings-summary-item"><span>Dokumen</span><strong id="pagesGroupSummary">Semua halaman · 1 rangkap</strong></div>
+<div class="settings-summary-item"><span>Media</span><strong id="mediaGroupSummary">Memuat media…</strong></div>
+<div class="settings-summary-item"><span>Tata Letak</span><strong id="layoutGroupSummary">Ukuran · 1 halaman/sisi</strong></div>
+<div class="settings-summary-item"><span>Cetak</span><strong id="colorGroupSummary">1 sisi · Otomatis</strong></div>
+</div>
+</div>
+<div aria-label="Bagian pengaturan cetak" class="settings-main-tabs" role="tablist">
+<button aria-controls="settingsPanelDocument" aria-selected="true" class="settings-main-tab is-active" data-settings-tab="document" id="settingsTabDocument" role="tab" type="button">Dokumen</button>
+<button aria-controls="settingsPanelMedia" aria-selected="false" class="settings-main-tab" data-settings-tab="media" id="settingsTabMedia" role="tab" type="button">Media</button>
+<button aria-controls="settingsPanelLayout" aria-selected="false" class="settings-main-tab" data-settings-tab="layout" id="settingsTabLayout" role="tab" type="button">Tata Letak</button>
+<button aria-controls="settingsPanelPrint" aria-selected="false" class="settings-main-tab" data-settings-tab="print" id="settingsTabPrint" role="tab" type="button">Cetak</button>
+</div>
+<div class="settings-tab-panels">
+<section aria-labelledby="settingsTabDocument" class="settings-tab-panel is-active" data-settings-panel="document" id="settingsPanelDocument" role="tabpanel">
+<div class="settings-grid settings-tab-grid">
+<label class="field-control"><span>Halaman yang dicetak</span><select id="pageRangeMode"><option value="all">Semua halaman</option><option value="custom">Rentang tertentu</option></select></label>
+<label class="field-control" hidden="" id="pageRangeField"><span>Rentang halaman</span><input id="pageRange" inputmode="text" placeholder="Contoh: 1-5, 8, 11-13" type="text"/></label>
+<label class="field-control"><span>Pilihan halaman</span><select id="pageSubset"><option value="all">Semua</option><option value="odd">Ganjil saja</option><option value="even">Genap saja</option></select></label>
+<label class="field-control"><span>Urutan</span><select id="pageOrder"><option value="normal">Normal</option><option value="reverse">Terbalik</option></select></label>
+<label class="field-control"><span>Jumlah salinan</span><input id="printCopies" inputmode="numeric" max="999" min="1" type="number" value="1"/></label>
+<label class="toggle-control"><input checked="" id="collateCopies" type="checkbox"/><span><strong>Susun per salinan</strong><small>Setiap rangkap disusun lengkap.</small></span></label>
+</div>
+</section>
+<section aria-labelledby="settingsTabMedia" class="settings-tab-panel" data-settings-panel="media" hidden="" id="settingsPanelMedia" role="tabpanel">
+<div class="settings-grid settings-tab-grid">
+<label class="field-control"><span>Sumber bahan</span><select id="mediaSource"><option value="store">Dari toko</option><option value="customer">Bawa Sendiri</option></select><small class="field-help">Bawa Sendiri hanya dikenai jasa cetak.</small></label>
+<label class="field-control"><span>Jenis media</span><select id="printMaterial"></select></label>
+<label class="field-control"><span>Ukuran bahan</span><select id="paperSize"></select><small class="field-help" id="paperSizeHelp">Ukuran yang tidak didukung media tetap ditampilkan sebagai tidak tersedia.</small></label>
+<div class="setting-note pricing-status field-wide"><strong id="pricingTierLabel">Harga</strong><span id="mediaPriceHint">Harga mengikuti media dan pengaturan sisi cetak.</span></div>
+</div>
+</section>
+<section aria-labelledby="settingsTabLayout" class="settings-tab-panel" data-settings-panel="layout" hidden="" id="settingsPanelLayout" role="tabpanel">
+<div aria-label="Mode tata letak" class="handling-tabs handling-mode-switch" role="group">
+<button aria-pressed="true" class="handling-tab is-active" data-handling="size" type="button">Ukuran</button>
+<button aria-pressed="false" class="handling-tab" data-handling="multiple" type="button">Beberapa Halaman</button>
+<button aria-pressed="false" class="handling-tab" data-handling="booklet" type="button">Booklet</button>
+</div>
+<div class="settings-grid settings-tab-grid handling-body">
+<select hidden="" id="layoutMode"><option value="normal">Normal</option><option value="booklet">Booklet</option></select>
+<label class="field-control handling-size handling-multiple"><span>Ukuran halaman</span><select id="scaleMode"><option value="fit">Sesuaikan</option><option value="actual">Ukuran asli</option><option value="shrink">Perkecil jika terlalu besar</option><option value="custom">Skala khusus</option></select></label>
+<label class="field-control handling-size handling-multiple" hidden="" id="customScaleField"><span>Skala khusus</span><input id="customScale" max="400" min="10" type="number" value="100"/><small class="field-help">%</small></label>
+<label class="field-control"><span>Orientasi</span><select id="sheetOrientation"><option value="auto">Otomatis</option><option value="portrait">Tegak</option><option value="landscape">Mendatar</option></select></label>
+<label class="field-control handling-multiple" id="pagesPerSideField"><span>Halaman per sisi</span><select id="pagesPerSide"><option hidden="" value="1">1 halaman</option><option value="2">2 halaman</option><option value="4">4 halaman</option><option value="6">6 halaman</option><option value="8">8 halaman</option><option value="9">9 halaman</option><option value="16">16 halaman</option></select></label>
+<label class="field-control handling-multiple" hidden="" id="nupOrderField"><span>Urutan halaman</span><select id="nupOrder"><option value="ltr">Kiri → kanan, lalu turun</option><option value="rtl">Kanan → kiri, lalu turun</option><option value="ttb">Atas → bawah, lalu ke kanan</option></select></label>
+<div class="booklet-settings field-wide handling-booklet" hidden="" id="bookletSettings">
+<label class="field-control"><span>Arah jilid</span><select id="bookletBinding"><option value="left">Kiri · baca kiri ke kanan</option><option value="right">Kanan · baca kanan ke kiri</option></select></label>
+<div class="setting-note"><strong>Booklet</strong><span>2 halaman per sisi · 2 sisi · kertas mendatar · balik sisi pendek.</span></div>
+</div>
+<label class="toggle-control field-wide handling-size handling-multiple handling-booklet"><input checked="" id="pageBorder" type="checkbox"/><span><strong>Garis batas halaman</strong><small>Tampilkan batas halaman pada pratinjau.</small></span></label>
+</div>
+</section>
+<section aria-labelledby="settingsTabPrint" class="settings-tab-panel" data-settings-panel="print" hidden="" id="settingsPanelPrint" role="tabpanel">
+<div class="settings-grid settings-tab-grid">
+<label class="field-control"><span>Sisi cetak</span><select id="sideMode"><option value="simplex">1 sisi</option><option value="duplex-auto">2 sisi · otomatis</option><option value="duplex-manual">2 sisi · manual</option></select><small class="field-help" id="sideModeHelp">2 sisi hanya aktif pada media dan ukuran yang mendukung.</small></label>
+<label class="field-control" hidden="" id="flipField"><span>Balik pada</span><select id="duplexFlip"><option value="long">Sisi panjang / Buku</option><option value="short">Sisi pendek / Kalender</option></select></label>
+<label class="field-control field-wide"><span>Warna cetak</span><select id="printColorMode"><option value="auto">Otomatis · ikuti dokumen</option><option value="bw">Hitam-putih</option></select><small class="field-help" id="printColorHelp">Otomatis mempertahankan warna file dan menghitung kelas warna tiap sisi. Pilih Hitam-putih untuk mencetak seluruh job sebagai BW.</small></label>
+<div class="setting-note field-wide"><strong>Catatan</strong><span>Tarif 2 sisi menggunakan pasangan warna dan berlaku tetap sejak lembar pertama.</span></div>
+</div>
+</section>
+</div>
+<div class="job-mini-summary" id="jobMiniSummary"><strong>Menunggu PDF</strong><span>Unggah berkas untuk menghitung lembar, sisi, dan harga cetak.</span></div>
+</section><div class="settings-actions"><div class="analysis-progress" hidden="" id="analysisProgress">
+<div class="progress-head">
+<span id="analysisProgressText">Menyiapkan analisis…</span>
+<strong id="analysisProgressValue">0%</strong>
+</div>
+<div class="progress-track"><div class="progress-bar" id="analysisProgressBar"></div></div>
+</div><button class="primary-button" disabled="" id="analyzeBtn" type="button">
+<span aria-hidden="true" class="button-icon">
+<svg viewbox="0 0 24 24"><path d="M4 19h16M6 16l3-4 3 2 5-7 2 2M6 5h.01"></path></svg>
+</span>
+<span id="analyzeBtnLabel">Analisis Harga Cetak</span>
+</button><button class="secondary-button" hidden="" id="newAnalysisBtn" type="button">
+                Analisis File Baru
+            </button></div></section></section><section class="print-workbench analysis-workspace" hidden="" id="workbench"><section aria-labelledby="previewTitle" class="panel preview-panel workbench-pane">
+<div class="panel-heading workbench-heading">
+<div>
+<h2 id="previewTitle">Pratinjau</h2>
+<p id="previewSubtitle">Belum ada file yang dipilih.</p>
+</div>
+</div>
+<div aria-label="Mode pratinjau" class="preview-tabs" hidden="" id="previewTabs" role="tablist"><button aria-selected="true" class="preview-tab is-active" data-preview-mode="document" id="documentPreviewTab" role="tab" type="button">Dokumen</button><button aria-selected="false" class="preview-tab" data-preview-mode="print" id="printPreviewTab" role="tab" type="button">Hasil Cetak</button><button aria-selected="false" class="preview-tab" data-preview-mode="3d" id="threeDPreviewTab" role="tab" type="button">Simulasi 3D</button></div>
+<div class="empty-state" id="previewEmpty">
+<div aria-hidden="true" class="empty-illustration document-illustration">
+<svg viewbox="0 0 64 64"><path d="M18 6h20l10 10v42H18zM38 6v12h10M25 30h16M25 38h16M25 46h11"></path></svg>
+</div>
+<strong>Pratinjau PDF muncul di sini</strong>
+<span>Pilih file pada panel unggah untuk melihat halaman dokumen.</span>
+</div>
+<div class="pdf-viewer" hidden="" id="pdfViewer">
+<div class="viewer-toolbar">
+<div class="page-nav">
+<button aria-label="Halaman pertama" class="icon-button" id="firstPageBtn" title="Halaman pertama" type="button">|‹</button>
+<button aria-label="Halaman sebelumnya" class="icon-button" id="prevPageBtn" title="Halaman sebelumnya" type="button">
+<svg viewbox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg>
+</button>
+<label class="page-input-wrap">
+<span>Hal.</span>
+<input id="pageInput" inputmode="numeric" min="1" type="number" value="1"/>
+<span>/ <b id="pageTotal">0</b></span>
+</label>
+<button aria-label="Halaman berikutnya" class="icon-button" id="nextPageBtn" title="Halaman berikutnya" type="button">
+<svg viewbox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg>
+</button>
+<button aria-label="Halaman terakhir" class="icon-button" id="lastPageBtn" title="Halaman terakhir" type="button">›|</button>
+</div>
+<div class="zoom-nav"><button aria-label="Perkecil" class="icon-button viewer-tool" id="zoomOutBtn" title="Perkecil" type="button">−</button><span class="zoom-label" id="zoomLabel">Sesuaikan halaman</span><button aria-label="Perbesar" class="icon-button viewer-tool" id="zoomInBtn" title="Perbesar" type="button">+</button><span class="toolbar-separator"></span><button aria-label="Sesuaikan halaman" class="icon-button viewer-tool" id="fitPageBtn" title="Sesuaikan halaman" type="button">▣</button><button aria-label="Sesuaikan lebar" class="icon-button viewer-tool" id="fitWidthBtn" title="Sesuaikan lebar" type="button">↔</button><button aria-label="Ukuran asli" class="viewer-text-button" id="actualSizeBtn" title="Ukuran asli" type="button">1:1</button><button aria-label="Putar 90°" class="icon-button viewer-tool" id="rotatePreviewBtn" title="Putar 90°" type="button">↻</button></div>
+<span class="viewer-mode-hint">Pratinjau PDF</span></div>
+<div class="canvas-stage" id="canvasStage"><div class="canvas-loader" hidden="" id="canvasLoader"><span class="spinner"></span><span>Merender halaman…</span></div><canvas id="previewCanvas"></canvas></div>
+</div>
+<div class="print-viewer" hidden="" id="printViewer">
+<div class="viewer-toolbar print-toolbar">
+<div class="page-nav">
+<button aria-label="Sisi cetak pertama" class="icon-button" id="firstPrintSideBtn" title="Sisi pertama" type="button">|‹</button>
+<button aria-label="Sisi cetak sebelumnya" class="icon-button" id="prevPrintSideBtn" type="button"><svg viewbox="0 0 24 24"><path d="M15 18l-6-6 6-6"></path></svg></button>
+<label class="page-input-wrap"><span>Sisi</span><input id="printSideInput" inputmode="numeric" min="1" type="number" value="1"/><span>/ <b id="printSideTotal">0</b></span></label>
+<button aria-label="Sisi cetak berikutnya" class="icon-button" id="nextPrintSideBtn" type="button"><svg viewbox="0 0 24 24"><path d="M9 18l6-6-6-6"></path></svg></button>
+<button aria-label="Sisi cetak terakhir" class="icon-button" id="lastPrintSideBtn" title="Sisi terakhir" type="button">›|</button>
+</div>
+<span class="linear-preview-badge">Urutan hasil cetak lengkap</span>
+</div>
+<div class="print-side-info"><div><strong id="printSideTitle">Sisi Cetak 1</strong><span id="printSidePages">Halaman -</span></div><div class="print-side-actions"><span class="type-badge type-auto" id="printSideType">Otomatis</span><label aria-hidden="true" class="side-override-control" hidden="" title="Koreksi klasifikasi warna sisi"><span>Koreksi warna</span><select id="printSideOverride"><option value="auto">Otomatis</option><option value="H">BW</option><option value="HW">Sebagian warna</option><option value="W">Full warna</option><option value="D">Pekat</option></select></label></div></div>
+<div class="canvas-stage print-canvas-stage" id="printCanvasStage"><div class="canvas-loader" hidden="" id="printCanvasLoader"><span class="spinner"></span><span>Menyusun simulasi sisi cetak…</span></div><canvas id="printPreviewCanvas"></canvas></div>
+<div class="print-hint" id="printHint">Menampilkan susunan halaman pada lembar cetak.</div>
+</div>
+<div class="live3d-viewer" hidden="" id="threeDViewer">
+<div class="viewer-toolbar live3d-toolbar">
+<div class="page-nav three-d-side-nav" id="threeDSideNav">
+<button aria-label="Sisi 3D pertama" class="icon-button" id="first3DSideBtn" title="Sisi pertama" type="button">|‹</button>
+<button aria-label="Sisi 3D sebelumnya" class="icon-button" id="prev3DSideBtn" title="Sisi sebelumnya" type="button">‹</button>
+<label class="page-input-wrap"><span>Sisi</span><input id="threeDSideInput" inputmode="numeric" min="1" type="number" value="1"/><span>/ <b id="threeDSideTotal">0</b></span></label>
+<button aria-label="Sisi 3D berikutnya" class="icon-button" id="next3DSideBtn" title="Sisi berikutnya" type="button">›</button>
+<button aria-label="Sisi 3D terakhir" class="icon-button" id="last3DSideBtn" title="Sisi terakhir" type="button">›|</button>
+</div>
+<span class="linear-preview-badge">Seret: putar · Gulir: zoom</span>
+<div class="booklet3d-controls" hidden="" id="booklet3DControls">
+<button aria-pressed="true" class="booklet3d-mode is-active" data-booklet3d-mode="sheet" type="button">Lembar Induk</button>
+<button aria-pressed="false" class="booklet3d-mode" data-booklet3d-mode="fold" type="button">Tertutup</button>
+<button aria-pressed="false" class="booklet3d-mode" data-booklet3d-mode="book" type="button">Buku Terbuka</button>
+</div>
+<div class="booklet-spread-controls" hidden="" id="bookletSpreadControls">
+<button class="icon-button" id="bookletFirstSpread" title="Pasangan halaman pertama" type="button">|‹</button>
+<button class="icon-button" id="bookletPrevSpread" title="Pasangan halaman sebelumnya" type="button">‹</button>
+<span id="bookletSpreadLabel">Hal. 1</span>
+<button class="icon-button" id="bookletNextSpread" title="Pasangan halaman berikutnya" type="button">›</button>
+<button class="icon-button" id="bookletLastSpread" title="Pasangan halaman terakhir" type="button">›|</button>
+</div>
+<div><button class="icon-button" id="threeDFlipBtn" title="Balik objek" type="button">↻</button><button class="icon-button" id="threeDResetBtn" title="Reset kamera" type="button">⌂</button></div>
+</div>
+<div class="live3d-stage" id="threeDStage">
+<div class="live3d-object material-paper" id="threeDObject">
+<div class="live3d-stack" id="threeDStack"></div>
+<div class="live3d-face live3d-front" id="threeDFront"><span>DEPAN</span></div>
+<div class="live3d-face live3d-back" id="threeDBack"><span>BELAKANG</span></div>
+</div>
+<div class="booklet3d-folded material-paper" hidden="" id="booklet3DFolded">
+<div class="booklet3d-folded-stack" id="booklet3DFoldedStack"></div>
+<div class="booklet3d-folded-face booklet3d-folded-front" id="booklet3DFoldedFront"><span>SAMPUL DEPAN</span></div>
+<div class="booklet3d-folded-face booklet3d-folded-back" id="booklet3DFoldedBack"><span>SAMPUL BELAKANG</span></div>
+<div aria-hidden="true" class="booklet3d-crease"></div>
+</div>
+<div class="booklet3d-book material-paper" hidden="" id="booklet3DBook">
+<div class="booklet3d-left-stack" id="booklet3DLeftStack"></div>
+<div class="booklet3d-page booklet3d-left-page" id="booklet3DLeftPage"><span>KIRI</span></div>
+<div class="booklet3d-spine" id="booklet3DSpine"></div>
+<div class="booklet3d-page booklet3d-right-page" id="booklet3DRightPage"><span>KANAN</span></div>
+<div class="booklet3d-right-stack" id="booklet3DRightStack"></div>
+</div>
+</div>
+<div class="print-hint" id="threeDInfo">Simulasi mengikuti media, ukuran, jumlah lembar, dan sisi cetak.</div>
+</div>
+</section><section aria-labelledby="resultTitle" class="panel result-panel workbench-pane">
+<div class="panel-heading workbench-heading">
+<div>
+<h2 id="resultTitle">Hasil Analisis</h2>
+<p id="resultSubtitle">Rincian harga dan klasifikasi dokumen.</p>
+</div>
+</div>
+<div class="empty-state result-empty" id="resultEmpty">
+<div aria-hidden="true" class="empty-illustration chart-illustration">
+<svg viewbox="0 0 64 64"><path d="M10 54h44M17 48V33h9v15M29 48V22h9v26M41 48V12h9v36"></path></svg>
+</div>
+<strong>Belum ada hasil</strong>
+<span>Setelah dianalisis, rincian harga dan klasifikasi akan tampil di sini.</span>
+</div>
+<div class="result-content" hidden="" id="resultContent">
+<div class="cost-summary">
+<span>Total Harga Cetak</span>
+<strong id="totalCost">Rp 0</strong>
+<small id="resultFileMeta">-</small>
+</div>
+<details class="result-detail-panel" open=""><summary><span>Rincian pekerjaan &amp; harga</span><small id="resultDetailSummary">Lembar, media, layout, dan tarif</small></summary><div class="result-detail-body"><div class="job-summary-grid" id="jobSummaryGrid"><div><span>Lembar fisik</span><strong id="jobSheetCount">0</strong></div><div><span>Sisi tercetak</span><strong id="jobSideCount">0</strong></div><div><span>Media</span><strong id="jobMediaLabel">-</strong></div><div><span>Tata letak</span><strong id="jobNupLabel">1 halaman/sisi</strong></div><div><span>Rangkap</span><strong id="jobCopiesLabel">1×</strong></div><div><span>Tarif</span><strong id="jobTierLabel">Reguler</strong></div></div><div class="job-color-summary" id="jobColorSummary">Klasifikasi warna akan muncul setelah analisis.</div><div class="job-price-breakdown" id="jobPriceBreakdown"></div></div></details>
+<div class="stats-grid">
+<button class="stat-card all-stat is-active" data-filter="ALL" type="button">
+<span class="stat-count" id="allCount">0</span>
+<strong>Semua</strong>
+<small>Semua halaman</small>
+</button>
+<button class="stat-card h-stat" data-filter="H" type="button">
+<span class="stat-count" id="hCount">0</span>
+<strong>BW</strong>
+<small id="hPrice">Rp300/sisi</small>
+</button>
+<button class="stat-card hw-stat" data-filter="HW" type="button">
+<span class="stat-count" id="hwCount">0</span>
+<strong>Sebagian warna</strong>
+<small id="hwPrice">Rp500/sisi</small>
+</button>
+<button class="stat-card w-stat" data-filter="W" type="button">
+<span class="stat-count" id="wCount">0</span>
+<strong>Full warna</strong>
+<small id="wPrice">Rp1.000/sisi</small>
+</button>
+<button class="stat-card d-stat" data-filter="D" type="button">
+<span class="stat-count" id="dCount">0</span>
+<strong>Pekat</strong>
+<small id="dPrice">Rp1.500/sisi</small>
+</button>
+</div>
+<div class="result-tools result-count-only">
+<span id="visiblePageCount">0 halaman</span>
+</div>
+<div aria-live="polite" class="page-results" id="pageResults"></div>
+<details class="analysis-note">
+<summary>Catatan tarif</summary>
+<p>Tarif 1 sisi menggunakan volume progresif per kelas warna. Tarif 2 sisi tetap per pasangan warna.</p>
+</details>
+</div>
+</section></section>
+</main>
+<footer aria-label="Informasi pengembang" class="app-footer">
+<p>
+<span id="copyrightYears">© 2026</span>
+            Dibuat oleh <strong>Riyan Sumarno</strong>
+<span aria-hidden="true" class="footer-dot">·</span>
+<span>Rizky Fotocopy &amp; Stationery by Giting Creative</span>
+</p>
+</footer>
+</div>
+<script>
+window.PRINT_ANALYZER_CONFIG = {
+    version: '2.11.0',
+    analyzerVersion: '2.11.0-core',
+    maxFileSize: 209715200,
+    maxPages: 5000,
+    projectStartYear: 2026
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.26.25"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@3.0.3/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.12.1/dist/html2pdf.bundle.min.js"></script>
+<script src="assets/js/app.js?v=2.11.0" type="module"></script>
+</body>
+</html>
